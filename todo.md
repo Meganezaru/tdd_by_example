@@ -3,3 +3,7 @@
 - [ ] amountのプライベート化
 - [x] Dollarの副作用
 - [ ] Moneyの丸め処理
+- [x] equals()
+- [ ] hash_code()
+- [ ] nullとの等価性
+- [ ] オブジェクトとの等価性
