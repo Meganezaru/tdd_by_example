@@ -2,8 +2,9 @@ from abc import abstractmethod
 
 
 class Money:
-    def __init__(self, amount):
+    def __init__(self, amount, currency):
         self._amount = amount
+        self._currency = currency
 
     def __eq__(self, other):
         return self.__class__ == other.__class__ and self._amount == other._amount
@@ -20,31 +21,22 @@ class Money:
     def times(self, multiplier):
         pass
 
-    @abstractmethod
     def currency(self):
-        pass
+        return self._currency
 
 
 class Dollar(Money):
     def __init__(self, amount):
-        super(Dollar, self).__init__(amount=amount)
-        self._currency = "USD"
+        super(Dollar, self).__init__(amount=amount, currency="USD")
 
     def times(self, multiplier):
         return Dollar(self._amount * multiplier)
 
-    def currency(self):
-        return self._currency
-
 
 class Franc(Money):
     def __init__(self, amount):
-        super(Franc, self).__init__(amount=amount)
-        self._currency = "CHF"
+        super(Franc, self).__init__(amount=amount, currency="CHF")
 
     def times(self, multiplier):
         return Franc(self._amount * multiplier)
-
-    def currency(self):
-        return self._currency
 
