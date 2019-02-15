@@ -9,6 +9,10 @@ class Money:
     def dollar(cls, amount):
         return Dollar(amount)
 
+    @classmethod
+    def franc(cls, amount):
+        return Franc(amount)
+
 
 class Dollar(Money):
     def times(self, multiplier):
