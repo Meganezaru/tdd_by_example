@@ -5,6 +5,14 @@ class Money:
     def __eq__(self, other):
         return self.__class__ == other.__class__ and self._amount == other._amount
 
+    @classmethod
+    def dollar(cls, amount):
+        return Dollar(amount)
+
+    @classmethod
+    def franc(cls, amount):
+        return Franc(amount)
+
 
 class Dollar(Money):
     def times(self, multiplier):
