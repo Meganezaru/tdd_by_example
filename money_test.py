@@ -1,8 +1,8 @@
-from money import Dollar, Franc
+from money import Money, Dollar, Franc
 
 
 def test_multiplication():
-    five = Dollar(5)
+    five = Money.dollar(5)
     assert five.times(2) == Dollar(10)
     assert five.times(3) == Dollar(15)
 
