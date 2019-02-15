@@ -30,7 +30,7 @@ class Dollar(Money):
         return Dollar(self._amount * multiplier)
 
     def currency(self):
-        pass
+        return "USD"
 
 
 class Franc(Money):
@@ -38,4 +38,4 @@ class Franc(Money):
         return Franc(self._amount * multiplier)
 
     def currency(self):
-        pass
+        return "CHF"
