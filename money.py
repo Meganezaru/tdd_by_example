@@ -26,16 +26,25 @@ class Money:
 
 
 class Dollar(Money):
+    def __init__(self, amount):
+        super(Dollar, self).__init__(amount=amount)
+        self._currency = "USD"
+
     def times(self, multiplier):
         return Dollar(self._amount * multiplier)
 
     def currency(self):
-        return "USD"
+        return self._currency
 
 
 class Franc(Money):
+    def __init__(self, amount):
+        super(Franc, self).__init__(amount=amount)
+        self._currency = "CHF"
+
     def times(self, multiplier):
         return Franc(self._amount * multiplier)
 
     def currency(self):
-        return "CHF"
+        return self._currency
+
