@@ -7,3 +7,7 @@
 - [ ] hash_code()
 - [ ] nullとの等価性
 - [ ] オブジェクトとの等価性
+- [x] 5 CHF * 2 = 10 CHF
+- [ ] DollarとFrancの重複
+- [ ] equalsの一般化
+- [ ] timesの一般化
