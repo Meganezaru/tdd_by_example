@@ -8,22 +8,14 @@ class Money:
 
     @classmethod
     def dollar(cls, amount):
-        return Dollar(amount, "USD")
+        return Money(amount, "USD")
 
     @classmethod
     def franc(cls, amount):
-        return Franc(amount, "CHF")
+        return Money(amount, "CHF")
 
     def times(self, multiplier):
         return Money(self._amount * multiplier, self._currency)
 
     def currency(self):
         return self._currency
-
-
-class Dollar(Money):
-    pass
-
-
-class Franc(Money):
-    pass
