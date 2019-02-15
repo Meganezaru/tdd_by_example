@@ -16,3 +16,7 @@ def test_equality():
 def test_currency():
     assert Money.dollar(1).currency() == "USD"
     assert Money.franc(1).currency() == "CHF"
+
+
+def test_simple_addition():
+    assert Money.dollar(5).plus(Money.dollar(5)) == Money.dollar(10)
