@@ -7,7 +7,7 @@ class Money:
         self._currency = currency
 
     def __eq__(self, other):
-        return self.__class__ == other.__class__ and self._amount == other._amount
+        return self._currency == other._currency and self._amount == other._amount
 
     @classmethod
     def dollar(cls, amount):
