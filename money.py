@@ -3,8 +3,7 @@ from abc import ABC
 
 class Bank:
     def reduce(self, source, target_currency):
-        amount = source.augend._amount + source.addend._amount
-        return Money(amount, target_currency)
+        return source.reduce(target_currency)
 
 
 class Expression(ABC):
@@ -15,6 +14,10 @@ class Sum(Expression):
     def __init__(self, augend, addend):
         self.augend = augend
         self.addend = addend
+
+    def reduce(self, target_currency):
+        amount = self.augend._amount + self.addend._amount
+        return Money(amount, target_currency)
 
 
 class Money(Expression):
@@ -44,3 +47,6 @@ class Money(Expression):
 
     def plus(self, addend):
         return Sum(self, addend)
+
+    def reduce(self, target_currency):
+        pass
