@@ -24,3 +24,10 @@ def test_simple_addition():
     bank = Bank()
     reduced = bank.reduce(sum_expression, "USD")
     assert reduced == Money.dollar(10)
+
+
+def test_plus_return_sum():
+    five = Money.dollar(5)
+    sum_expression = five.plus(five)
+    assert sum_expression.augend == five
+    assert sum_expression.addend == five

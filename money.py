@@ -10,6 +10,12 @@ class Expression(ABC):
     pass
 
 
+class Sum(Expression):
+    def __init__(self, augend, addend):
+        self.augend = None
+        self.addend = None
+
+
 class Money(Expression):
     def __init__(self, amount, currency):
         self._amount = amount
@@ -36,4 +42,4 @@ class Money(Expression):
         return self._currency
 
     def plus(self, addend):
-        return Money(self._amount + addend._amount, self._currency)
+        return Sum(self, addend)
