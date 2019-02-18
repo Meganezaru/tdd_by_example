@@ -2,14 +2,19 @@ from abc import ABC, abstractmethod
 
 
 class Bank:
+    def __init__(self):
+        self.rates = dict()
+
     def reduce(self, source, target_currency):
         return source.reduce(self, target_currency)
 
-    def add_rate(self, param, param1, param2):
-        pass
+    def add_rate(self, source_currency, target_currency, rate):
+        target_rate = self.rates.get(source_currency, dict())
+        target_rate[target_currency] = rate
+        self.rates[source_currency] = target_rate
 
     def rate(self, source_currency, target_currency):
-        return 2 if source_currency == "CHF" and target_currency == "USD" else 1
+        return self.rates.get(source_currency, dict()).get(target_currency, -1)
 
 
 class Expression(ABC):
