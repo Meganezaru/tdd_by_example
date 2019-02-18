@@ -19,4 +19,8 @@ def test_currency():
 
 
 def test_simple_addition():
-    assert Money.dollar(5).plus(Money.dollar(5)) == Money.dollar(10)
+    five = Money.dollar(5)
+    sum_expression = five.plus(five)
+    bank = Bank()
+    reduced = bank.reduce(sum_expression, "USD")
+    assert reduced == Money.dollar(10)
