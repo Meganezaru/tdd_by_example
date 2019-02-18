@@ -3,6 +3,9 @@ from abc import ABC
 
 class Bank:
     def reduce(self, source, target_currency):
+        if isinstance(source, Money):
+            return source
+
         return source.reduce(target_currency)
 
 
