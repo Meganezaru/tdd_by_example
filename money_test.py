@@ -1,4 +1,4 @@
-from money import Money
+from money import Money, Bank
 
 
 def test_multiplication():

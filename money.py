@@ -1,4 +1,16 @@
-class Money:
+from abc import ABC
+
+
+class Bank:
+    def reduce(self, source, target_currency):
+        pass
+
+
+class Expression(ABC):
+    pass
+
+
+class Money(Expression):
     def __init__(self, amount, currency):
         self._amount = amount
         self._currency = currency
