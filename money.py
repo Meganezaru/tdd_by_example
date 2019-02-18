@@ -14,6 +14,9 @@ class Bank:
         self.rates[source_currency] = target_rate
 
     def rate(self, source_currency, target_currency):
+        if source_currency == target_currency:
+            return 1
+
         return self.rates.get(source_currency, dict()).get(target_currency, -1)
 
 
