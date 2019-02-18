@@ -12,8 +12,8 @@ class Expression(ABC):
 
 class Sum(Expression):
     def __init__(self, augend, addend):
-        self.augend = None
-        self.addend = None
+        self.augend = augend
+        self.addend = addend
 
 
 class Money(Expression):
