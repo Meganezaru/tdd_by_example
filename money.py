@@ -3,7 +3,8 @@ from abc import ABC
 
 class Bank:
     def reduce(self, source, target_currency):
-        return Money.dollar(10)
+        amount = source.augend._amount + source.addend._amount
+        return Money(amount, target_currency)
 
 
 class Expression(ABC):
