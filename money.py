@@ -1,13 +1,25 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 
 class Bank:
     def reduce(self, source, target_currency):
-        return Money.dollar(10)
+        return source.reduce(target_currency)
 
 
 class Expression(ABC):
-    pass
+    @abstractmethod
+    def reduce(self, target_currency):
+        raise NotImplemented
+
+
+class Sum(Expression):
+    def __init__(self, augend, addend):
+        self.augend = augend
+        self.addend = addend
+
+    def reduce(self, target_currency):
+        amount = self.augend._amount + self.addend._amount
+        return Money(amount, target_currency)
 
 
 class Money(Expression):
@@ -36,4 +48,7 @@ class Money(Expression):
         return self._currency
 
     def plus(self, addend):
-        return Money(self._amount + addend._amount, self._currency)
+        return Sum(self, addend)
+
+    def reduce(self, target_currency):
+        return self
