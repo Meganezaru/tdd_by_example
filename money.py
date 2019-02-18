@@ -54,4 +54,6 @@ class Money(Expression):
         return Sum(self, addend)
 
     def reduce(self, target_currency):
-        return self
+        rate = 2 if self.currency() == "CHF" and target_currency == "USD" else 1
+
+        return Money(self._amount / rate, target_currency)
