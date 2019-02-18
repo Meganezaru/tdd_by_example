@@ -2,6 +2,8 @@
 - [ ] $5 + $5 = $10
 - [ ] $5 + $5からMoneyの返却
 - [x] Bank.reduce(Money)
+- [ ] 通貨交換によるMoneyの変換
+- [ ] reduce(Bank, String)
 - [x] $5 * 2 = $10
 - [x] amountのプライベート化
 - [x] Dollarの副作用

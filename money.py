@@ -5,6 +5,9 @@ class Bank:
     def reduce(self, source, target_currency):
         return source.reduce(target_currency)
 
+    def add_rate(self, param, param1, param2):
+        pass
+
 
 class Expression(ABC):
     @abstractmethod
