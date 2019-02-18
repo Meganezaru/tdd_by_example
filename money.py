@@ -16,6 +16,9 @@ class Money(Expression):
         self._currency = currency
 
     def __eq__(self, other):
+        if not isinstance(other, Money):
+            return False
+
         return self._currency == other._currency and self._amount == other._amount
 
     @classmethod
