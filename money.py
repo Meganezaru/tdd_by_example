@@ -41,7 +41,7 @@ class Sum(Expression):
         return Money(amount, target_currency)
 
     def plus(self, addend):
-        pass
+        return Sum(self, addend)
 
 
 class Money(Expression):

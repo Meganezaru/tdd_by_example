@@ -4,7 +4,7 @@
 - [x] Bank.reduce(Money)
 - [x] 通貨交換によるMoneyの変換
 - [x] reduce(Bank, String)
-- [ ] Sum.plus
+- [x] Sum.plus
 - [ ] Expression.times
 - [x] $5 * 2 = $10
 - [x] amountのプライベート化
