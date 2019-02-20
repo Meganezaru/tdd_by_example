@@ -43,6 +43,9 @@ class Sum(Expression):
     def plus(self, addend):
         return Sum(self, addend)
 
+    def times(self, multiplier):
+        pass
+
 
 class Money(Expression):
     def __init__(self, amount, currency):
