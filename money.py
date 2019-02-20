@@ -29,6 +29,10 @@ class Expression(ABC):
     def plus(self, addend):
         raise NotImplemented
 
+    @abstractmethod
+    def times(self, multiplier):
+        raise NotImplemented
+
 
 class Sum(Expression):
     def __init__(self, augend, addend):
@@ -44,7 +48,7 @@ class Sum(Expression):
         return Sum(self, addend)
 
     def times(self, multiplier):
-        pass
+        return Sum(self.augend.times(multiplier), self.addend.times(multiplier))
 
 
 class Money(Expression):
